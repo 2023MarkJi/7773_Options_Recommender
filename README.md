@@ -57,7 +57,7 @@ We joined the separate paths and logged metrics to COMET.
 ### 4.5 End
 Mataflow is finished!
 
-## 4. Our App
+## 5. Our App
 
 We used Streamlit to build a simple app for users to select their expectation and get suggestions.
 * We set selectboxes for users to choose a date they want advice on, their expectations of market return and volatility.
