@@ -9,7 +9,7 @@ From the COMET graph, we can see that compared to randomly selecting options, ou
 
 ## 2. How to Set up Environment
 Since Metaflow is not supported on Windows systems, we recommend running the code on the Sandbox https://outerbounds.com/sandbox/.
-Please enter "pip install openpyxl" in the terminal, and use the default version of the sandbox for the rest of the dependencies.
+Please run "pip install openpyxl" and "pip install comet_ml" in the terminal, and use the default version of the sandbox for the rest of the dependencies.
 Then, put all the files in the GitHub repository in the same folder of the sandbox.
 Now, you can run our project directly using common python commands.
 
