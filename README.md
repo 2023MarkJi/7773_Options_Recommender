@@ -16,7 +16,7 @@ Now, you can run our project directly using common python commands.
 ## 3. Data
 
 ### 3.1 SPY Option Chains (spy_2020_2022.csv)
-The main dataset we used is a combination of three years of SPDR S&P 500 ETF Trust ($SPY) options end of day quotes ranging from 01-2020 to 12-2022 ($SPY Option Chains - Q1 2020 - Q4 2022 (kaggle.com)). From this data set, we can get SPY call and put options data with different strike prices at different expiration dates at each quote date, including trading volume, option price, implied volatility and Greeks, etc., with more than one million rows.
+The main dataset we used is a combination of three years of SPDR S&P 500 ETF Trust ($SPY) options end of day quotes ranging from 01-2020 to 12-2022 ([$SPY Option Chains - Q1 2020 - Q4 2022 (kaggle.com)](https://www.kaggle.com/datasets/kylegraupe/spy-daily-eod-options-quotes-2020-2022/data)). From this data set, we can get SPY call and put options data with different strike prices at different expiration dates at each quote date, including trading volume, option price, implied volatility and Greeks, etc., with more than one million rows.
 ### 3.2 Macroeconomics Data (Macro.xlsx)
 We want to use some macroeconomic data as features when training models. Therefore, we used the FRED plug-in in Excel to obtain eight different US macroeconomic indicators (unemployment rate, GDP growth rate, M1, M2, Fed target rate, CCPI, 10-year treasury bond yield, umich inflation expectation). In addition, we also used Excel to simply process the data to ensure that the data was of daily frequency.
 ### 23.3 Underlying ETF Prices (SPY_ETF.csv)
