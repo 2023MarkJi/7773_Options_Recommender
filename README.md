@@ -67,4 +67,4 @@ We used Streamlit to build a simple app for users to select their expectation an
 * We set selectboxes for users to choose a date they want advice on, their expectations of market return and volatility.
 * We load models and data obtained from our flow.
 * We recommend options investment strategies and specific options contracts for users based on their choices.
-* We draw a P/L graph at maturity and show how our models improved the probability of profit.
+* We add a chart to show how our models' accuracy and how our models improved the probability of profit.
