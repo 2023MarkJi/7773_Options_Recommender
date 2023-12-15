@@ -14,7 +14,7 @@ From the COMET graph, we can see that compared to randomly selecting options, ou
 * Then, put all the files in the GitHub repository in the same folder of the sandbox.(**Including spy_2020_2022.csv**, which cannot be uploaded to Git-hub by us, because it is larger than 25M.)
 * Now, you can run our project directly using common python commands.
 ### 2.2 How to run
-* Run **our_flow.py** by typing "COMET_API_KEY=xxx MY_PROJECT_NAME=yyy python our_app.py run" in the sandbox's terminal. Then you will get data and models required by our_app.py. (The obtained data and models should be similar to those in **app_data.zip**)
+* Run **our_flow.py** by typing "COMET_API_KEY=xxx MY_PROJECT_NAME=yyy python our_app.py run" in the sandbox's terminal. Then you will get data and models required by our_app.py. (The obtained data and models should be similar to those in **app_data.zip**)Please put the obtained data and models in the same folder of app.py.
 * Then, run **our_app.py** by typing "streamlit run our_app.py" in the sandbox's terminal. Then you can open the UI to use our app.
 
 ## 3. Data
