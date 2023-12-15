@@ -7,19 +7,23 @@ Simply, this project recommends option investment strategies and specific option
 To achieve this, we made an app (my_app.py) based on Streamlit for users to choose their expected return (large positive, slight positive, slight negative, large negative) for S&P 500. These four expected return choices correspond to four investment strategies (long call, bull spread, short call, long put). And based on these four investment strategies, we trained four classification models by using metaflow (my_flow.py) to predict which kind of strike price (in the time, at the time, out the time) options are more likely to be profitable. In addition, our app also allows users to choose expected volatility (increase, decrease). After the user selects the investment date, expected return and expected volatility, our app will automatically call the appropriate strategies and models and provide the user with a specific list of recommended options.
 From the COMET graph, we can see that compared to randomly selecting options, our models effectively improve the user's profit probability.
 
-## 2. How to Set up Environment
-Since Metaflow is not supported on Windows systems, we recommend running the code on the Sandbox https://outerbounds.com/sandbox/.
-Please run "pip install openpyxl" and "pip install comet_ml" in the terminal, and use the default version of the sandbox for the rest of the dependencies(See requirements).
-Then, put all the files in the GitHub repository in the same folder of the sandbox.
-Now, you can run our project directly using common python commands.
+## 2. How to Use
+### 2.1 How to Set up Environment
+*Since Metaflow is not supported on Windows systems, we recommend running the code on the Sandbox https://outerbounds.com/sandbox/.
+*Please run "pip install openpyxl" and "pip install comet_ml" in the terminal, and use the default version of the sandbox for the rest of the dependencies(See requirements).
+*Then, put all the files in the GitHub repository in the same folder of the sandbox.(**Including spy_2020_2022.csv**, which cannot be uploaded to Git-hub by us, because it is larger than 25M.)
+*Now, you can run our project directly using common python commands.
+### 2.2 How to run
+*Run **our_flow.py** by typing "COMET_API_KEY=xxx MY_PROJECT_NAME=yyy python our_app.py run" in the sandbox's terminal. Then you will get data and models required by our_app.py(The obtained data and models should be similar to those in **app_data.zip**).
+*Then, run **our_app.py** by typing "streamlit run our_app.py" in the sandbox's terminal. Then you can open the UI to use our app.
 
 ## 3. Data
 
 ### 3.1 SPY Option Chains (spy_2020_2022.csv)
-The main dataset we used is a combination of three years of SPDR S&P 500 ETF Trust ($SPY) options end of day quotes ranging from 01-2020 to 12-2022 ([$SPY Option Chains - Q1 2020 - Q4 2022 (kaggle.com)](https://www.kaggle.com/datasets/kylegraupe/spy-daily-eod-options-quotes-2020-2022/data)). Please download the dataset and save it in this folder. From this data set, we can get SPY call and put options data with different strike prices at different expiration dates at each quote date, including trading volume, option price, implied volatility and Greeks, etc., with more than one million rows.
+The main dataset we used is a combination of three years of SPDR S&P 500 ETF Trust ($SPY) options end of day quotes ranging from 01-2020 to 12-2022 ([$SPY Option Chains - Q1 2020 - Q4 2022 (kaggle.com)](https://www.kaggle.com/datasets/kylegraupe/spy-daily-eod-options-quotes-2020-2022/data)). **Please download the dataset and save it in this folder.** From this data set, we can get SPY call and put options data with different strike prices at different expiration dates at each quote date, including trading volume, option price, implied volatility and Greeks, etc., with more than one million rows.
 ### 3.2 Macroeconomics Data (Macro.xlsx)
 We want to use some macroeconomic data as features when training models. Therefore, we used the FRED plug-in in Excel to obtain eight different US macroeconomic indicators (unemployment rate, GDP growth rate, M1, M2, Fed target rate, CCPI, 10-year treasury bond yield, umich inflation expectation). In addition, we also used Excel to simply process the data to ensure that the data was of daily frequency.
-### 23.3 Underlying ETF Prices (SPY_ETF.csv)
+### 3.3 Underlying ETF Prices (SPY_ETF.csv)
 In order to know whether options we recommend are profitable, we need to know the daily prices of the SPY ETF, the underlying asset of the options. We download the data directly from Yahoo Finance (SPDR S&P 500 ETF Trust (SPY) Stock Historical Prices & Data - Yahoo Finance).
 
 ## 4. Our Flow
